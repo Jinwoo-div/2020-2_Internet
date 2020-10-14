@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <h3>기본 구조를 가진 표</h3>
+        <table border="1">
+            <tr>
+                <td>1열<td>2열<td>3열
+            </tr>
+            <tr>
+                <td rowspan="2">1행 1열<td>1행 2열<td>1행 3열
+            </tr>
+            <tr>
+                <td>2행 2열<td>2행 3열
+            </tr>
+            <tr>
+                <td colspan="3">3행 1열
+            </tr>
+        </table>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th><d>이름<th>전화번호<th>이메일<th>주소</d>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>유재석<td>123-1234<td>you@muhan.ac<td>서울 강북구 번동
+                </tr>
+                <tr>
+                    <td>유재석<td>123-1234<td>you@muhan.ac<td>서울 강북구 번동
+                </tr>
+                <tr>
+                    <td>유재석<td>123-1234<td colspan="2"><center>you@muhan.ac</center>
+                <tr>
+                    <td rowspan="2">유재석<td>123-1234<td>you@muhan.ac<td>서울 강북구 번동
+                </tr>
+                <tr>
+                    <td>123-1234<td>you@muhan.ac<td>서울 강북구 번동
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

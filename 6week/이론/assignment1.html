@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <h3>book 객체 배열 만들기</h3><hr>
+        <script>
+            function book(dataStr){
+                this.data = dataStr;
+            }
+
+            function ioData() {
+                var arr = []
+                for(var i = 0; i < 5; i++) {
+                    var data = prompt("콤마로 분리하면서 책제목, 저자, 가격 순으로 입력");
+                    arr.push(new book(data))
+                }
+                for (var f = 0; f < 5; f++) {
+                    document.write(arr.pop().data + "<br>")
+                }
+            }
+            ioData();
+        </script>
+    </body>
+</html>

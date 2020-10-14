@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <form>
+            첫번째 정수: <input type="text" id="first"></input>
+            두번째 정수: <input type="text" id="second"></input>
+            <p>합계<p id="sum" style="border:2px solid"></p></p>
+            <button type="button" onclick="sum()">계산</button>
+        </form>
+        <script>
+            function sum() {
+                var fir = Number(document.getElementById("first").value);
+                var sec = Number(document.getElementById("second").value);
+                var sum = fir + sec;
+                document.getElementById("sum").innerHTML = sum;
+            }
+        </script>
+    </body>
+</html>

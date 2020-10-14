@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <form id="menu">
+            <input type="checkbox" id="짜" value="짜장면">
+            <label for="짜">짜장면</label><br>
+            <input type="checkbox" id="짬" value="짬뽕">
+            <label for="짬">짬뽕</label><br>
+            <input type="checkbox" id="햄" value="햄버거">
+            <label for="햄">햄버거</label><br>
+            <button id="confirm" onclick=buttonClicked()>주문완료</button>
+        </form>
+    <script>
+        function buttonClicked() {
+            var data = document.getElementById("menu");
+            var checker = []
+            for(var i = 0; i < 3; i++) {
+                if (data[i].checked) {
+                    checker.push(data[i].value);
+                }
+            }
+            for (var i = 0; i < checker.length; i++) {
+                if (i == checker.length - 1) {
+                    document.write(checker[i] + "을 주문 하였습니다");
+                    continue;
+                }
+                document.write(checker[i] + ", ");
+            }
+        }
+    </script>
+    </body>
+</html>

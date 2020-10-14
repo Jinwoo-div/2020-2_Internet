@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>DOM 객체 동적 삽입</title>
+    <script>
+        function showAns1() {
+            var ans = document.createElement("div");
+            ans.setAttribute("id", "ans1");
+            ans.innerHTML = "백설공주";
+            var parent = document.getElementById("q1");
+            parent.appendChild(ans);
+        }
+
+        function showAns2() {
+            var ans = document.createElement("div");
+            ans.setAttribute("id", "ans2");
+            ans.innerHTML = "둘다";
+            var parent = document.getElementById("q2");
+            parent.appendChild(ans);
+        }
+    </script>
+    </head>
+    <body>
+    <h3>정답의 동적 삽입</h3><hr>
+    <div id="q1">Q. 거울아 거울아 세상에서 누가 제일 예쁘니?<br><br>
+        <input type="button" value="답보기" onclick=showAns1()></input>
+        <br><br>
+    </div>
+    <div id="q2">Q. 죽느냐 사느냐 어떤 것이 문제인가?<br><br>
+        <input type="button" value="답보기" onclick=showAns2()></input>
+        <br><br>
+    </div>
+    </body>
+</html>
+    

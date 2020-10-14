@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function init() {
+                var i = document.getElementById("hat")
+                var j = document.getElementById("shoe")
+                var k = document.getElementById("bag")
+                i.onclick = cal;
+                j.onclick = cal;
+                k.onclick = cal;
+            }e
+            function cal() {
+                var money = 0;
+                var box = document.getElementById("box");
+                for(var i = 0; i < box.length ; i++) {
+                    if (box[i].checked) {
+                        money += parseInt(box[i].value);
+                    }
+                }
+                document.getElementById("result").innerText = String(money);
+            }
+        </script>
+    </head>
+    <body onload="init()">
+        <h3>물품을 선택하면 금액이 자동계산 됩니다.</h3><hr>
+        <form id="box">
+            <input type="checkbox" id="hat" value="10000">모자 1만원</input>
+            <input type="checkbox" id="shoe" value="30000">구두 3만원</input>
+            <input type="checkbox" id="bag" value="80000">가방 8만원</input>
+        </form>
+        <p>지불하실 금액</p><p id="result" style="border:solid 2px black">ddd</p>
+    </body>
+</html>

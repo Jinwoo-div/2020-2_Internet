@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function ans(num) {
+                var box = document.getElementsByTagName("div");
+                document.getElementById("ans"+num).innerText = box[num-1].className;
+            }
+        </script>
+    </head>
+    <body>
+        <h3>계산해봅시다</h3><hr>
+        <form id="box">
+            <p>2 + 4 = </p><div id="ans1" class="6" onclick="ans(1)">답</div>
+            <p>4 * 20 + 64 = </p><div id="ans2" class="144" onclick="ans(2)">답</div>
+            <p>20/5-8*2 = </p><div id="ans3" class="-12" onclick="ans(3)">답</div>
+        </form>
+    </body>
+</html>

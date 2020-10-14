@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <h3>덧셈계산하시고, 결과를 입력하고 확인 버튼을 클릭하여 정확한지 확인해 보세요.</h3>
+        <hr>
+        <p>20+40=</p>
+        <form>
+            덧셈결과: <input type="text" id="sum"></input>
+            <button type="button" onclick="check()">결과확인</button>
+        </form>
+        <script>
+            function check() {
+                var sum = Number(document.getElementById("sum").value);
+                if (sum == 60) {
+                    alert("맞췄습니다.");
+                }
+                else alert("틀렸습니다.");
+            }
+        </script>
+    </body>
+</html>

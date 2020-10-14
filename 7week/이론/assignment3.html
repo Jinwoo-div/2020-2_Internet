@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function init() {
+                document.getElementById("fruit").onchange = sele;
+            }
+            function imgprint(name) {
+                var imgframe = document.getElementById("img");
+                if (name == "bana") {
+                    imgframe.style="background-image:url('1.jpg'); height: 200px; width: 240px";
+                }
+                if (name == "man") {
+                    imgframe.style="background-image:url('2.jpg'); height: 270px; width: 200px";
+                }
+                if (name == "app") {
+                    imgframe.style="background-image:url('3.jpg'); height: 240px; width: 240px";
+                }
+            }
+            function sele() {
+                var fru = document.getElementById("fruit");
+                for (var i = 0; i < fru.length ; i++) {
+                    if (fru[i].selected) {
+                        imgprint(fru[i].id);
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body onload="init()">
+        <h3>select객체에서 선택한 과일 출력</h3><hr>
+        <p>그림을 선택하면 이미지가 출력됩니다.</p>
+        <div id="img"><br></div>
+        <select id="fruit">
+            <option id="bana">바나나</option>
+            <option id="man">망고</option>
+            <option id="app">사과</option>
+        </select>
+    </body>
+</html>

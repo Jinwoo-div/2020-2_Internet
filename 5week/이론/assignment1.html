@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <h2>제목</h2>
+<script>
+    function Point(xpos, ypos) {
+        this.x = xpos;
+        this.y = ypos;
+    }
+    Point.prototype.setX = function (x) {
+        this.x = x;
+        return this.x;
+    }
+    Point.prototype.setY = function (y) {
+        this.y = y;
+        return this.y;
+    }
+    var p1 = new Point(10, 20);
+    var p2 = new Point(10, 30);
+    var share = p1.setX(p2.setY(1));
+    document.write(share);
+</script>
+</body>
+</html>

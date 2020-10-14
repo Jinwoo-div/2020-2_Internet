@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function calcu(event, line) {
+                if (event.keyCode == 13) {
+                    document.getElementById("result").innerText = eval(line.value);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h3>계산기 만들기</h3><hr>
+        <p>수식을 입력하고 &lt;enter&gt;를 입력하세요</p>
+        <p>식<br></p><input type="text" onkeydown="calcu(event, this)" value=""></input>
+        <p>값<br></p><div id="result" style="border: 2px solid black">d<br></div>
+    </body>
+</html>

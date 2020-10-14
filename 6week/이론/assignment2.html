@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <h3>난수 10개 생성</h3><hr>
+        <script>
+            function makeint() {
+                var arr = [];
+                for(var i = 0; i < 10; i++) {
+                    arr.push(Math.floor(Math.random()*101));
+                    document.write(arr[i] + "  ");
+                }
+                document.write("<hr>");
+                arr.sort();
+                document.write("제일 큰 수는 " + arr[9] + "<hr>");
+                for (var i = 0; i < 10; i++) {
+                    document.write(arr[i] + "  ");
+                }
+            }
+            makeint();
+        </script>
+    </body>
+</html>

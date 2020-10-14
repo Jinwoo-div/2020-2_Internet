@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            div#text{width:70%;
+            float:left;}
+            div#img{width:30%;
+            float:right;}
+            div#text>div{
+            height:60%;
+            padding:50px;
+            float:top;}
+            div#text>div:nth-child(2){
+            height:40%;
+            float:bottom;
+            }
+            </style>
+    </head>
+    <body>
+        <h3>웹브라우저 소개</h3>
+        <hr>
+        <div id=text><div id=1>브라우저라고 불리기도 하는 웹브라우저(Web Browser)는,
+            사용자에게 웹 서버 컴퓨터에 접속하고 웹페이지, 이미지, 동영상, 음악 등
+            다양한 데이터 다운받아 보여주는 소프트웨어이다. <bold>그림 1-2</bold>는
+            대표적인 Chrome 웹 브라우저를 보여준다.
+        </div><div id=2>웹 페이지는 브라우저에 HTML5 문서임을 알리기 위해 <bold>그림 1-3</bold>
+            과 같은 코드를 첫 라인에 삽입하여야 한다.
+        </div></div>
+        <div id=img><figure><img src="card.png" width="50" height="50"><figcaption>그림 1-2 구글 Chrome</figcaption>
+        </figure><figure><img src="card.png" width=50px height=50px><figcaption>그림 1-3 HTML 문서 구성</figcaption>
+        </div>
+    </body>
+</html>

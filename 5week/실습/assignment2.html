@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var date = new Date();
+            var ranNum = date.getMilliseconds()%101;
+            var gameCount = 0;
+            function numGame() {
+                var num = document.getElementById("num").value;
+                if (num < ranNum) {
+                    gameCount++;
+                    document.getElementById("hint").innerHTML = "낮습니다";
+                    document.getElementById("count").innerHTML = gameCount;
+                }
+                else if (num > ranNum) {
+                    gameCount++;
+                    document.getElementById("hint").innerHTML = "높습니다";
+                    document.getElementById("count").innerHTML = gameCount;
+                }
+                else {
+                    document.getElementById("hint").innerHTML = "성공입니다";
+                    gameCount = 0;
+                    document.getElementById("count").innerHTML = "";
+                    date = new Date();
+                    ranNum = date.getMilliseconds()%101;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h3>숫자 맞추기 게임</h3>
+        <form>
+            <div>이 게임은 컴퓨터가 생성한 숫자를 맞추는 게임입니다.
+                숫자는 1부터 100 사이에 있습니다.</div>
+            <label>숫자: <input type="text" id="num"></input>
+            <button type="button" onclick="numGame()">확인</button><br>
+            <label>추측횟수:<div style="border: 2px solid" id="count"></div></label>
+            <label>힌트:<p style="border: 2px solid" id="hint"></p></label>
+        </form>
+    </body>
+</html>

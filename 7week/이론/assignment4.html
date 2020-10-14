@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function init() {
+                var a= document.getElementsByName("fruit");
+                for (var i = 0; i < a.length; i++) {
+                    a[i].onclick = sele;
+                }
+            }
+            function imgprint(name) {
+                var imgframe = document.getElementById("img");
+                if (name == "bana") {
+                    imgframe.style="background-image:url('1.jpg'); height: 200px; width: 240px";
+                }
+                if (name == "man") {
+                    imgframe.style="background-image:url('2.jpg'); height: 270px; width: 200px";
+                }
+                if (name == "app") {
+                    imgframe.style="background-image:url('3.jpg'); height: 240px; width: 240px";
+                }
+            }
+            function sele() {
+                var fru = document.getElementById("fru");
+                for (var i = 0; i < fru.length ; i++) {
+                        
+                    // document.getElementById("img").innerText = "fru[i].value";
+                    if (fru[i].checked) {
+                        imgprint(fru[i].value);
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body onload="init()">
+        <h3>라디오 버튼을 클릭하면 이미지를 출력합니다.</h3><hr>
+        <form id="fru">
+            <input type="radio" name="fruit" value="bana">바나나</input>
+            <input type="radio" name="fruit" value="man">망고</input>
+            <input type="radio" name="fruit" value="app">사과</input>
+        </form>
+        <div id="img"><br></div>
+    </body>
+</html>

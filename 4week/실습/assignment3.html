@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+<script>
+    while(true) {
+        var num = prompt("100미만의 정수만 입력", "1");
+        if (isNaN(num) || num == "") {
+            alert("정확한 타입의 데이터를 입력해주세요");
+        }
+        else if (num < 1) {
+            alert("정수"+ num + "은 0보다 크지 않습니다.");
+        }
+        else if (num > 100) {
+            alert("정수" + num + "은 101보다 작지 않습니다");
+        }
+        else {
+            alert(calculation(num));
+    }
+    function calculation(num) {
+        num = parseInt(num);
+        for (var i = num - 1; i != 0 ; i--) {
+            num += i;
+        }
+        return num;
+    }
+}
+</script>
+    </body>
+</html>
