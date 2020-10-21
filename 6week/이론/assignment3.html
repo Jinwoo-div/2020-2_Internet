@@ -1,8 +1,33 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script>
+            function buttonClicked() {
+                var newdiv = document.createElement("div");
+                newdiv.setAttribute("id", "dv");
+                newdiv.style.backgroundColor = "red";
+                var data = document.getElementById("menu");
+                var checker = [];
+                for(var i = 0; i < 3; i++) {
+                    if (data[i].checked) {
+                        checker.push(data[i].value);
+                    }
+                }
+                var str = "";
+                for (var i = 0; i < checker.length; i++) {
+                    if (i == checker.length - 1) {
+                        str += checker[i] + "을 주문 하였습니다";
+                        continue;
+                    }
+                    str += checker[i] + ", ";
+                }
+                newdiv.innerHTML = str;
+                var par = document.getElementById("area");
+                par.appendChild(newdiv);
+            }
+        </script>
     </head>
-    <body>
+    <body id="area">
         <form id="menu">
             <input type="checkbox" id="짜" value="짜장면">
             <label for="짜">짜장면</label><br>
@@ -10,25 +35,7 @@
             <label for="짬">짬뽕</label><br>
             <input type="checkbox" id="햄" value="햄버거">
             <label for="햄">햄버거</label><br>
-            <button id="confirm" onclick=buttonClicked()>주문완료</button>
+            <input type="button" id="confirm" onclick=buttonClicked() value="주문완료"></input>
         </form>
-    <script>
-        function buttonClicked() {
-            var data = document.getElementById("menu");
-            var checker = []
-            for(var i = 0; i < 3; i++) {
-                if (data[i].checked) {
-                    checker.push(data[i].value);
-                }
-            }
-            for (var i = 0; i < checker.length; i++) {
-                if (i == checker.length - 1) {
-                    document.write(checker[i] + "을 주문 하였습니다");
-                    continue;
-                }
-                document.write(checker[i] + ", ");
-            }
-        }
-    </script>
     </body>
 </html>
