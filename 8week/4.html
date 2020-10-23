@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var count = 1;
+            function add() {
+                count++;
+                var newtr = document.createElement("tr");
+                newtr.insertCell()
+                newtr.insertCell()
+                var arr = newtr.getElementsByTagName("td");
+                arr[0].innerHTML = "row " + count + ", cell 1";
+                arr[1].innerHTML = "row " + count + ", cell 2";
+                
+                document.getElementById("rowadd").appendChild(newtr);
+            }
+        </script>
+    </head>
+    <body>
+        <input type="button" id="addrow" value="add_new_row" onclick=add()><input type="button" value="add_new_col">
+        <table border="1">
+            <thead style="background-color: green";>
+                <th>Header1<th>Header2
+            </thead>
+            <tbody id="rowadd">
+                <tr>
+                    <td>row 1, cell 1<td>row 1, cell 1
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
