@@ -1,0 +1,145 @@
+<html>
+    <head>
+        <style>  
+
+        input[type=number]::-webkit-inner-spin-button {
+            opacity: 1;
+        }
+        #speed {
+            text-align: center;
+            width: 70px;
+        }
+        #angle {
+            text-align: center;
+            width: 70px;
+        }
+        #can {
+            border: 1px dotted red;
+        }
+        canvas {
+            position: absolute;
+        }
+        .doubleCan {
+            position: relative;
+            width: 500px;
+            height: 300px;
+        }
+        </style>
+        <script>
+            window.onload = init;
+            function init() {
+                //listener
+
+                document.getElementById("fire").onclick = fire;
+
+                //backgroundPart
+
+                var main = document.getElementById("main");
+                var context = main.getContext("2d");
+                context.fillStyle = "yellow";
+                context.fillRect(0,0,500,300);
+                var net = new Image();
+                var lawn = new Image();
+                net.src = "net.png";
+                lawn.src = "lawn.png";
+                net.onload = function() {
+                    context.drawImage(net, 450, 55);
+                }
+                lawn.onload = function() {
+                    context.drawImage(lawn, 0, 260);
+                }
+
+                ///ballPart
+                
+                var ball = document.getElementById("ball").getContext("2d");
+                ball.beginPath();
+                ball.arc(450, 130, 10, 0, 2* Math.PI, false);
+                ball.fillStyle = "red";
+                ball.fill();
+            }
+
+            function fire() {
+                var time = new Date();
+                var now = time.getMilliseconds();
+                var x = 450;
+                var y = 130;
+                var speed = document.getElementById("speed").value;
+                var angle = document.getElementById("angle").value;
+                while(true) {
+                    if (speed == 0 || y == 0) {
+                        break;
+                    }
+                    if (speed == 0) {
+                        speed = 1;
+                    }
+                    var tempx = x;
+                    var tempy = y;
+                    if (angle <= 90 || angle >= -90) {
+                        x += Math.cos(angle)*speed;
+                    }
+                    else {
+                        x -= Math.cos(angle)*speed;
+                    }
+                    if (angle >= 0 || angle <= 180) {
+                        y += Math.sin(angle)*speed;
+                    }
+                    else {
+                        y -= Math.sin(angle)*speed;
+                    }
+                    if (x <= 0 || x >= 500) {
+                        x = crashx(x, tempx);
+                    } 
+                    if (y <= 0 || y >= 260 ) {
+                        y = crashy(y, tempy);
+                    }
+                    ball.arc(x, y, 10, 0, 2* Math.PI, false);
+                    ball.fillStyle = "red";
+                    while(true) {
+                        var a = time.getMilliseconds();
+                        if (now < a || now == 999) {
+                            break;
+                        }
+                    }
+                    var ball = document.getElementById("ball").getContext("2d");
+                    ball.clearRect(0, 0, 500, 260);
+                    ball.beginPath();
+                    ball.fill();
+                    speed--;
+                }
+            }
+
+            function crashx(x, tempx) {
+                if (x >= 500) {
+                    return (500 - (x - (500 - tempx)));
+                }
+                else {w
+                    return (x - tempx);
+                }
+                
+            }
+
+            function crashy(y, tempy) {
+                if (y >= 260) {
+                    return (260 - (y - (260 - tempy)));
+                }
+                else {
+                    return (y - tempy);
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <div class="doubleCan">
+        <canvas id="main" width="500" height="300"></canvas>
+        <canvas id="ball" width="500" height="260"></canvas>
+        </div>
+        <br>
+        <div class="inp">
+        <label>속도<input type="number" id="speed" value="0"></input></label>
+        <label>각도(-90~90)<input type="number" id="angle" value="0" min="-90" max="90"></input></label>
+        <br><br>
+        <button type="button" id="fire">발사</button>
+        </div>
+    </body>
+</html>
