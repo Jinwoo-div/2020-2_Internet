@@ -19,20 +19,22 @@
     </script>
 
     <form method="POST" action='UserController' name="frmAddUser">
-        User ID : <input type="text" readonly="readonly" name="userid"
-            value="<c:out value="${user.userid}" />" /> <br /> 
-        First Name : <input
-            type="text" name="firstName"
-            value="<c:out value="${user.firstName}" />" /> <br /> 
-        Last Name : <input
-            type="text" name="lastName"
-            value="<c:out value="${user.lastName}" />" /> <br /> 
-        DOB : <input
-            type="text" name="dob"
-            value="<fmt:formatDate pattern="MM/dd/yyyy" value="${user.dob}" />" /> <br /> 
-        Email : <input type="text" name="email"
-            value="<c:out value="${user.email}" />" /> <br /> <input
-            type="submit" value="Submit" />
+        ID : <input type="text" readonly="readonly" name="id"
+            value="<c:out value="${user.id}" />" /> <br /> 
+        Name : <input
+            type="text" name="name"
+            value="<c:out value="${user.name}" />" /> <br /> 
+        Sex : <input
+            type="radio" name="sex"
+            value="<c:out value="${user.sex}" />" />³²
+            <input type="radio" name="sex"
+            value="<c:out value="${user.sex}" />" />¿© <br /> 
+        Hobby : <input
+            type="text" name="hobby"
+            value="<c:out value="${user.hobby}" />" /> <br /> 
+        Phone : <input type="text" name="phone"
+            value="<c:out value="${user.phone}" />" /> <br /> <input
+            type="submit" value="Submit" /><input type="button" value="show"/>
     </form>
 </body>
 </html>

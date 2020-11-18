@@ -12,24 +12,24 @@
     <table border=1>
         <thead>
             <tr>
-                <th>User Id</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>DOB</th>
-                <th>Email</th>
+                <th>id</th>
+                <th>name</th>
+                <th>sex</th>
+                <th>hobby</th>
+                <th>phone</th>
                 <th colspan=2>Action</th>
             </tr>
         </thead>
         <tbody>
             <c:forEach items="${users}" var="user">
                 <tr>
-                    <td><c:out value="${user.userid}" /></td>
-                    <td><c:out value="${user.firstName}" /></td>
-                    <td><c:out value="${user.lastName}" /></td>
+                    <td><c:out value="${user.id}" /></td>
+                    <td><c:out value="${user.name}" /></td>
+                    <td><c:out value="${user.sex}" /></td>
                     <td><fmt:formatDate pattern="yyyy-MMM-dd" value="${user.dob}" /></td>
-                    <td><c:out value="${user.email}" /></td>
-                    <td><a href="UserController?action=edit&userId=<c:out value="${user.userid}"/>">Update</a></td>
-                    <td><a href="UserController?action=delete&userId=<c:out value="${user.userid}"/>">Delete</a></td>
+                    <td><c:out value="${user.hobby}" /></td>
+                    <td><a href="UserController?action=edit&userId=<c:out value="${user.id}"/>">Update</a></td>
+                    <td><a href="UserController?action=delete&userId=<c:out value="${user.id}"/>">Delete</a></td>
                 </tr>
             </c:forEach>
         </tbody>
