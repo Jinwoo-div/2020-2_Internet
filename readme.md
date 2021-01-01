@@ -14,3 +14,7 @@
   + JavaScript 사용하여 객체 동적 생성, css스타일 변경 구현
 * 7week
   + JavaScript 사용하여 여러가지 InputType 구현
+* 8week
+  + JavaScript 내의 Canvas 사용하여 간단한 게임 구현
+* 9week
+  + BOM객체 사용하여 여러가지 페이지 제어 구현
